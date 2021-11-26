@@ -1,0 +1,16 @@
+<configuration scan="true" scanPeriod="30 seconds">
+    <!-- 调试模式，输出到控制台 -->
+    <!-- 彩色日志参考这里 https://stackoverflow.com/questions/27843562/how-to-configure-logback-in-spring-boot-for-ansi-color-feature-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <encoder>
+            <pattern>%green(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %highlight(%-5level) -%msg %cyan(%logger{15})
+                [%file:%line] %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
